@@ -20,9 +20,14 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Criar e Ativar Ambiente Virtual
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
       - name: Instalar Dependências
         run: |
-          python -m pip install --upgrade pip
+          pip install --upgrade pip
           pip install -r requirements.txt  # Certifique-se de ter um arquivo requirements.txt com as dependências necessárias
 
       - name: Executar Automação
