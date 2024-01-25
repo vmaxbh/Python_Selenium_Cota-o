@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: '0 11 * * *'  # Define a programação para as 11:00 hs todos os dias
   workflow_dispatch:  # Adiciona a capacidade de acionar manualmente
-  workflow_run:  # Adiciona o evento workflow_run para mostrar a bolinha amarela
-    workflows: ["Automacao Diaria Cotação Moedas"]
 
 jobs:
   executar_automacao:
