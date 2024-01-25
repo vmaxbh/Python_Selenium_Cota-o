@@ -6,7 +6,7 @@ on:
         - cotacao
 
 jobs:
-  executar_automacao:
+  build:
     runs-on: ubuntu-latest
 
     steps:
