@@ -1,8 +1,9 @@
 name: Automacao Diaria Cotação Moedas
 
 on:
-  branches:
-      - cotacao
+  push:
+    branches:
+        - cotacao
 
 jobs:
   executar_automacao:
