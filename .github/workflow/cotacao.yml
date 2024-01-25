@@ -26,6 +26,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Definir variável de ambiente COTA_YOUR_ACCOUNT_SID
+        run: echo "COTA_YOUR_ACCOUNT_SID=confidencial" >> $GITHUB_ENV    
+
       - name: Executar scripts
         run: |
           run: python index.py
