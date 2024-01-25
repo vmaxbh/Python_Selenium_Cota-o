@@ -1,11 +1,8 @@
 name: Automacao Diaria Cotação Moedas
 
 on:
-  schedule:
-    - cron: '0 11 * * *'  # Define a programação para as 11:00 hs todos os dias
-  workflow_dispatch:  # Adiciona a capacidade de acionar manualmente
-  workflow_run:  # Adiciona o evento workflow_run
-    workflows: ["Automacao Diaria Cotação Moedas"]
+  branches:
+      - cotacao
 
 jobs:
   executar_automacao:
