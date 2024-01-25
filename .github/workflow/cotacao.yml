@@ -3,30 +3,29 @@ name: Automacao Diaria Cotação Moedas
 on:
   push:
     branches:
-        - cotacao
-
+      - cotacao
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do Código
+      - name: Checkout do código
         uses: actions/checkout@v2
 
-      - name: Configurar Python
+      - name: Configurar ambiente Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
 
-      - name: Criar e Ativar Ambiente Virtual
+      - name: Ativar ambiente virtual Python
         run: |
           python -m venv venv
           source venv/bin/activate
 
-      - name: Instalar Dependências
+      - name: Instalar dependências Python
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt  # Certifique-se de ter um arquivo requirements.txt com as dependências necessárias
+          pip install -r requirements.txt
 
-      - name: Executar Automação
-        run: python index.py
+      - name: Executar scripts
+        run: |
+          run: python index.py
