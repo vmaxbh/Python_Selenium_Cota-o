@@ -1,0 +1,26 @@
+name: Automacao Diaria Cotação Moedas
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # Define a programação para as 11:00 hs todos os dias
+
+jobs:
+  executar_automacao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v2
+
+      - name: Configurar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Instalar Dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Certifique-se de ter um arquivo requirements.txt com as dependências necessárias
+
+      - name: Executar Automação
+        run: python index.py
